@@ -98,10 +98,6 @@ jobs:
         run: |
           npm install -g @railway/cli
       
-      - name: Login to Railway
-        run: |
-          echo "${{ secrets.RAILWAY_TOKEN }}" | railway login
-      
       - name: Deploy to Railway
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
