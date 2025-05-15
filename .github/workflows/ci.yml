@@ -103,7 +103,7 @@ jobs:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
-          railway link || exit 1
+          railway link ${{ secrets.RAILWAY_PROJECT_ID }} || exit 1
           railway status
           railway up --detach || {
             echo "Railway deployment failed. Checking logs..."
