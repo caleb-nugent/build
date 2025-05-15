@@ -2,6 +2,12 @@
 
 An AI-powered application that analyzes furniture images and generates detailed woodworking plans.
 
+## Quick Access
+
+Visit our live application at: https://caleb-nugent.github.io/build/
+
+No installation required! Simply upload your furniture image and get detailed woodworking plans instantly.
+
 ## Features
 
 - Upload images of furniture
@@ -10,56 +16,9 @@ An AI-powered application that analyzes furniture images and generates detailed 
 - Material lists and step-by-step instructions
 - Dimensions and joinery recommendations
 
-## Setup
-
-### Backend Setup
-
-1. Navigate to the backend directory:
-```bash
-cd backend
-```
-
-2. Create a virtual environment:
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
-
-3. Install dependencies:
-```bash
-pip install -r requirements.txt
-```
-
-4. Create a `.env` file with your OpenAI API key:
-```bash
-OPENAI_API_KEY=your_api_key_here
-```
-
-5. Start the backend server:
-```bash
-uvicorn main:app --reload
-```
-
-### Frontend Setup
-
-1. Navigate to the frontend directory:
-```bash
-cd frontend
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Start the development server:
-```bash
-npm run dev
-```
-
 ## Usage
 
-1. Open your browser and navigate to `http://localhost:3000`
+1. Visit https://caleb-nugent.github.io/build/
 2. Upload an image of a piece of furniture
 3. Click "Analyze Furniture"
 4. Wait for the AI to generate detailed woodworking plans
@@ -72,10 +31,15 @@ npm run dev
 
 ## Technologies Used
 
-- Frontend: React, TypeScript, Chakra UI
-- Backend: FastAPI, Python
+- Frontend: React, TypeScript, Chakra UI (hosted on GitHub Pages)
+- Backend: FastAPI, Python (hosted on Railway)
 - AI: OpenAI GPT-4 Vision API
+- CI/CD: GitHub Actions
+
+## For Developers
+
+If you want to run the application locally or contribute to the project, check out our [Development Guide](docs/DEVELOPMENT.md).
 
 ## Note
 
-This application requires an OpenAI API key with access to the GPT-4 Vision API. Make sure you have the appropriate API access before setting up the application. 
+This application is powered by GPT-4 Vision API. The API key is securely managed on our backend infrastructure. 
