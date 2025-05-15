@@ -72,10 +72,12 @@ function App() {
 
   return (
     <ChakraProvider>
-      <Container maxW="container.xl" py={10}>
+      <Container maxW="container.xl" py={8}>
         <VStack spacing={8}>
           <Heading>Furniture Vision</Heading>
-          <Text>Upload a photo of furniture to get detailed woodworking plans</Text>
+          <Box>
+            Upload your furniture image to get started
+          </Box>
           
           <Box w="full" maxW="md" p={6} borderWidth={1} borderRadius="lg">
             <VStack spacing={4}>
