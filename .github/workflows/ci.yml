@@ -46,11 +46,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-          cache: 'npm'
-          cache-dependency-path: './frontend/package-lock.json'
       
       - name: Install frontend dependencies
-        run: npm ci
+        run: npm install
       
       - name: Build frontend
         run: npm run build
@@ -92,22 +90,21 @@ jobs:
         with:
           node-version: '18'
       
-      - name: Install and configure Railway
+      - name: Install Railway CLI
         run: |
           npm install -g @railway/cli
-          railway version
+      
+      - name: Login to Railway
+        run: |
+          echo "${{ secrets.RAILWAY_TOKEN }}" | railway login
       
       - name: Deploy to Railway
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
-          if [ -z "$RAILWAY_TOKEN" ]; then
-            echo "Error: RAILWAY_TOKEN is not set"
-            exit 1
-          fi
-          echo "Deploying to Railway..."
-          railway up
+          railway link
+          railway up --detach
 
   # Build Docker images
   docker-build:
